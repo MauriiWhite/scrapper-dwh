@@ -1,0 +1,10 @@
+# Configuraciones generales del proyecto
+[general]
+app_name = "Scrapper"
+app_version = "1.0.0"
+debug = true
+
+[author]
+name = "Mauricio Blanco"
+email = "mauriblanco.s@gmail.com"
+github = "https://github.com/MauriiWhite"

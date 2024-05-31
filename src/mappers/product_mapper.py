@@ -1,10 +1,12 @@
+from utils.schemas.abc import Mapper
+
 from entities.product import Product
 from models.product_response import ProductProduct
 
 
-class ProductMapper:
+class ProductMapper(Mapper):
     @staticmethod
-    def product_to_entity(product: ProductProduct) -> Product:
+    def to_entity(product: ProductProduct) -> Product:
         return Product(
             brand=product.brand,
             description=product.description,

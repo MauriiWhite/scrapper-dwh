@@ -1,9 +1,10 @@
 from typing import List
+from utils.schemas.abc import EntityResponse
 
 from models.product_product import ProductProduct
 
 
-class ProductResponse:
+class ProductResponse(EntityResponse):
     def __init__(self, results: List[ProductProduct]):
         self.__results = results
 

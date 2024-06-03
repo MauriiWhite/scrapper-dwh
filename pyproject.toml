@@ -25,4 +25,6 @@ dependencies = [
     "pandas",
     "python-dotenv",
     "uvicorn",
+    "toml",
+    "openpyxl",
 ]

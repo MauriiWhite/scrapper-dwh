@@ -1,0 +1,12 @@
+[scrapper]
+method = "POST"
+
+[scrapper.headers]
+content-type = "application/json"
+tenant = "catalogo"
+x-channel = "BuySmart"
+
+[scrapper.json]
+categories = "Computación"
+page = 1
+hitsPerPage = 100

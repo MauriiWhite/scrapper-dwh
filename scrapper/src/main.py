@@ -26,14 +26,12 @@ def main():
 
     manager = JSONFileManager("data", "products.json")
 
-    for page in range(1, 3):
+    for page in range(1, 12):
         result: List[Product] = scrapper.scrap(page=page)
         for product in result:
             manager.add_objects(product.to_dict())
 
     print(scrapper.total_time)
-
-    # pass
 
 
 if __name__ == "__main__":

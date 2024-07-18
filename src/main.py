@@ -16,6 +16,9 @@ import models.database
 
 def main():
     Base.metadata.create_all(bind=engine)
+    print(
+        f"{Fore.GREEN}{Style.BRIGHT}\u2713 | Modelos creados 'models.database'.{Style.RESET_ALL}"
+    )
 
     try:
         with SessionLocal() as session:
@@ -43,6 +46,8 @@ def main():
             f"{Fore.RED}{Style.BRIGHT}\u2A2F | Datos anteriormente insertados.{Style.RESET_ALL}"
         )
         session.rollback()
+    finally:
+        session.close()
 
 
 if __name__ == "__main__":

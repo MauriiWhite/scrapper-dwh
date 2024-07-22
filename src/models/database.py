@@ -20,8 +20,8 @@ class Product(Base):
     product_id = Column(INT, primary_key=True)
     brand = Column(VARCHAR(100), nullable=False)
     description = Column(TEXT, nullable=False)
-    price = Column(DECIMAL(10, 2), nullable=False)
-    reference = Column(DECIMAL(10, 2), nullable=False)
+    price = Column(INT, nullable=False)
+    reference = Column(INT, nullable=False)
     discount = Column(DECIMAL(4, 2), nullable=False)
 
     sales = relationship(
@@ -101,8 +101,8 @@ class Sales(Base):
     sale_date = Column(DATE, nullable=False)
     quantity = Column(INT, nullable=False)
     discount = Column(DECIMAL(4, 2), nullable=False)
-    final_amount = Column(DECIMAL(10, 2), nullable=False)
-    total_amount = Column(DECIMAL(10, 2), nullable=False)
+    final_amount = Column(INT, nullable=False)
+    total_amount = Column(INT, nullable=False)
 
     product = relationship("Product", back_populates="sales")
     customer = relationship("Customer", back_populates="sales")

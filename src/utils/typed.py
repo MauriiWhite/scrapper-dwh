@@ -1,4 +1,4 @@
 from pandas import Series
-from typing import Iterable, Hashable
+from typing import Iterable, Hashable, Tuple
 
-DataTyped = Iterable[tuple[Hashable, Series]]
+DataTyped = Iterable[Tuple[Hashable, Series]]

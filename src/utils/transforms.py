@@ -10,12 +10,12 @@ def correct_encoding(series: Series) -> Series:
     return series.str.encode("latin1").str.decode("utf-8")
 
 
-def transform_csv_products(file_path: str) -> DataTyped:
+def csv_products(file_path: str) -> DataTyped:
     df = pd.read_csv(file_path, encoding="utf-8")
     return df.iterrows()
 
 
-def transform_json_branches(file_path: str) -> DataTyped:
+def json_branches(file_path: str) -> DataTyped:
     df = pd.read_json(
         file_path, convert_dates=["openingDate"], dtype={"phone": str}, encoding="utf8"
     )
@@ -24,7 +24,7 @@ def transform_json_branches(file_path: str) -> DataTyped:
     return df.iterrows()
 
 
-def transform_xlsx_customers(file_path: str) -> DataTyped:
+def xlsx_customers(file_path: str) -> DataTyped:
     df = pd.read_excel(file_path)
     df["gender"] = df["gender"].replace({"female": "f", "male": "m"})
 
@@ -41,7 +41,7 @@ def transform_xlsx_customers(file_path: str) -> DataTyped:
     return df.iterrows()
 
 
-def transform_xml_sales(file_path: str) -> DataTyped:
+def xml_sales(file_path: str) -> DataTyped:
     df = pd.read_xml(file_path)
     df["saleDate"] = pd.to_datetime(df["saleDate"], format="%Y-%m-%d")
     df["saleDate"] = df["saleDate"].dt.strftime("%Y-%m-%d")

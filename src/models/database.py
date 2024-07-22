@@ -1,4 +1,15 @@
-from sqlalchemy import Column, DECIMAL, VARCHAR, INT, TEXT, CHAR, TIME, DATE, ForeignKey
+from sqlalchemy import (
+    Column,
+    DECIMAL,
+    VARCHAR,
+    INT,
+    TEXT,
+    CHAR,
+    TIME,
+    DATE,
+    ForeignKey,
+    Index,
+)
 from sqlalchemy.orm import relationship
 from database.conection import Base
 
@@ -20,6 +31,11 @@ class Product(Base):
     def __repr__(self):
         return f"<Product(product_id={self.product_id}, brand='{self.brand}')>"
 
+    __table_args__ = (
+        Index("ix_product_brand", "brand"),
+        Index("ix_product_price", "price"),
+    )
+
 
 class Customer(Base):
     __tablename__ = "customers"
@@ -40,6 +56,11 @@ class Customer(Base):
 
     def __repr__(self):
         return f"<Customer(customer_id={self.customer_id}, email='{self.email}')>"
+
+    __table_args__ = (
+        Index("ix_customer_email", "email", unique=True),
+        Index("ix_customer_last_name", "last_name"),
+    )
 
 
 class Branch(Base):
@@ -63,6 +84,11 @@ class Branch(Base):
     def __repr__(self):
         return f"<Branch(branch_id={self.branch_id}, branch_name='{self.branch_name}')>"
 
+    __table_args__ = (
+        Index("ix_branch_city", "city"),
+        Index("ix_branch_opening_date", "opening_date"),
+    )
+
 
 class Sales(Base):
     __tablename__ = "sales"
@@ -84,3 +110,10 @@ class Sales(Base):
 
     def __repr__(self):
         return f"<Sales(sale_id={self.sale_id}, sale_date='{self.sale_date}')>"
+
+    __table_args__ = (
+        Index("ix_sales_sale_date", "sale_date"),
+        Index("ix_sales_product_id", "product_id"),
+        Index("ix_sales_customer_id", "customer_id"),
+        Index("ix_sales_branch_id", "branch_id"),
+    )

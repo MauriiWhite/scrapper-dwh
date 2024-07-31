@@ -1,8 +1,10 @@
 # Scrapper Data Warehouse Project
 
+![Scrapper-DWH](assets/image.png)
+
 ## 📜 Descripción
 
-**Scrapper** es un **Data Warehouse** diseñado para gestionar datos de productos de computación extraídos de una URL específica. Este proyecto utiliza un modelo dimensional con un esquema en estrella y ha sido implementado mediante ingeniería inversa para realizar web scraping de los datos de productos.
+**Scrapper** es un **Data Warehouse** diseñado para gestionar datos de productos de computación extraídos de una URL específica. Este proyecto utiliza un modelo dimensional con un esquema en estrella, que mediante ingeniería inversa es capaz de realizar peticiones dinámicas para el acceso a datos de ciertos productos.
 
 El proyecto incluye las siguientes tablas predeterminadas:
 
@@ -22,7 +24,7 @@ El proyecto está organizado en las siguientes carpetas y archivos:
 - **`requirements.txt`**: Archivo que lista las dependencias necesarias para el proyecto. Asegúrate de instalar estas dependencias antes de ejecutar el proyecto.
 - **`scrapper/`**: Contiene el código principal para realizar el scraping de datos a partir de la URL especificada.
 
-> [!WARNING]
+> [!CAUTION]
 > Debido a restricciones de propiedad intelectual, la URL para el scrapper no está disponible públicamente. Como resultado, el scrapper no puede ser ejecutado sin la URL válida.
 
 - **`src/`**: Carpeta con los archivos de ejecución principal del proyecto. Incluye los scripts y módulos esenciales que forman el núcleo del sistema.
@@ -44,7 +46,7 @@ Sigue estos pasos para configurar el entorno de desarrollo y preparar el proyect
 1. **Configura la Base de Datos**:
    - Abre XAMPP y inicia los servicios de **Apache** y **MySQL**.
    - Accede a **phpMyAdmin** desde tu navegador en `http://localhost/phpmyadmin/`.
-   - Crea una nueva base de datos llamada **store**.
+   - Crea una nueva base de datos llamada ***`store`***.
 
 2. **Configura el Entorno de Python**:
    - **Crear un Entorno Virtual**:
@@ -107,8 +109,4 @@ Sigue estos pasos para ejecutar el scrapper y verificar que los datos se hayan g
 
 Si encuentras algún problema durante la ejecución o en la verificación de los datos, revisa los mensajes de error en la terminal y asegúrate de que todas las configuraciones sean correctas.
 
-## 😊 Agradecimientos
-
-Gracias por usar **Scrapper Data Warehouse**. Espero que este proyecto te sea de utilidad.
-
-> Atte. ***Maurii White***
+> Created by ***MauriiWhite***
